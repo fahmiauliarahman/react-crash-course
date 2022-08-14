@@ -17,15 +17,17 @@ const Collection = () => {
   return (
     <>
       <Carousel>
-        {data.map((item) => (
-          <Carousel.Item>
-            <img className="d-block w-100" src={item.url} alt="First slide" />
-            <Carousel.Caption>
-              <h3>{item.title}</h3>
-              <p>{item.title}</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
+        {data.map((item, i) => {
+          return (
+            <Carousel.Item key={i}>
+              <img className="d-block w-100" src={item.url} alt="First slide" />
+              <Carousel.Caption>
+                <h3>{item.title}</h3>
+                <p>{item.title}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          );
+        })}
       </Carousel>
     </>
   );
